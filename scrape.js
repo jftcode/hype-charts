@@ -12,20 +12,35 @@ request("http://hypem.com/popular/week:Nov-14-2016?count=50", (err, resp, body) 
   let $ = cheerio.load(body);
 
   $("[data-itemid]").each(function(){
-    let itemId = $(this).data().itemid;
+    let mediaid = $(this).data().itemid;
     let artist = $(this).find('.track_name a.artist').text();
     let title = $(this).find('.track_name a.track span.base-title').text();
     let dateposted = $(this).find('.post_info a.readpost').attr('title');
     let siteid = $(this).find('.post_info a.follow-pill').attr('class').split(' ')[1].slice(9);
     let sitename = $(this).find('.post_info a.blog-fav-off').text();
+    let posturl = $(this).find('.post_info a.readpost').attr('href');
+    // let loved_count = $(this).find('.haarp-fav-count').text().trim();
+    let posted_count = $(this).find('a.toggle-reposts').text().replace(/[^0-9]+/g, '') || 1;
+    // let thumb_url = $(this).find('.thumb').css("background-image").replace(/^url\((.*?)\)$/, '$1');
 
     console.log(
-      'item: '+itemId,
+      'mediaid: '+mediaid,
       'artist: '+artist,
       'title: '+title,
       'dateposted: '+dateposted,
       'siteid: '+siteid,
-      'sitename: '+sitename
+      'sitename: '+sitename,
+      'posturl: '+posturl,
+      // 'postid'
+      // 'loved_count: '+loved_count
+      'posted_count: '+posted_count,
+      // 'thumb_url: '+thumb_url
+      // 'thumb_url_large: '
+      // 'thumb_url_artist: '
+      // 'time: '
+      // 'description: '
+      // 'itunes_link: '
+
     );
   });
 
