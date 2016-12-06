@@ -11,9 +11,9 @@ request("http://hypem.com/popular/week:Nov-14-2016?count=50", (err, resp, body) 
 
   let $ = cheerio.load(body);
 
-  $('.track_name a.artist').each(function(){
-    let artistName = $(this).text();
-    console.log(artistName);
+  $("[data-itemid]").each(function(){
+    let itemId = $(this).data().itemid;
+    console.log(itemId);
   });
 
 });
