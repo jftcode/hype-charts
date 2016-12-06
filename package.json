@@ -1,0 +1,28 @@
+{
+  "name": "hype-charts",
+  "version": "1.0.0",
+  "description": "An open source API that returns time machine data from hype machine.",
+  "main": "server.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jftcode/hype-charts.git"
+  },
+  "keywords": [
+    "hype",
+    "machine"
+  ],
+  "author": "Jason Thomas",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/jftcode/hype-charts/issues"
+  },
+  "homepage": "https://github.com/jftcode/hype-charts#readme"
+}
