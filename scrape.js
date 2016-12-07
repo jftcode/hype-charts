@@ -49,5 +49,3 @@ request("http://hypem.com/popular/week:Oct-22-2007?count=50", (err, resp, body) 
 
   console.log(tracks);
 });
-
-module.exports = { tracks };
